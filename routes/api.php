@@ -9,7 +9,7 @@ use App\Http\Controllers\API\ParentController;
 use App\Http\Controllers\API\NoteController;
 use App\Http\Controllers\API\ProfController;
 use App\Http\Controllers\API\FormateurController;
-=======
+
 use App\Http\Controllers\api\CoursController;
 
 
@@ -131,8 +131,9 @@ Route::controller(AdminController::class)->group(function () {
 
 
 Route::controller(FormateurController::class)->group(function () {
+    Route::post('getformationByformateur', 'getformationByformateur');
 
-    
+
 });
 
 Route::controller(CoursController::class)->group(function () {
@@ -149,12 +150,15 @@ Route::controller(CoursController::class)->group(function () {
 
     // DELETE API //
 
-    // READ API // 
+    // READ API //
     Route::post('get-cours', 'getCours');
 
-    // DELETE API // 
+    // DELETE API //
 
     Route::post('delete-cours', 'deleteCours');
+
+    
+    Route::post('getcoursByformationid', 'getcoursByformationid');
 
 });
 
