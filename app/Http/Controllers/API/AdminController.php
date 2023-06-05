@@ -52,6 +52,8 @@ class AdminController extends BaseController
 
 
     // MODIFIER UN UTILISATEUR
+
+    // MODIFIER UN UTILISATEUR
     public function modifyUser(Request $request)
     {
         $validator = Validator::make($request->all(), [
