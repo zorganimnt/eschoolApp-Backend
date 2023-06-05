@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AdminController;
+use App\Http\Controllers\API\ChatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
@@ -9,8 +10,8 @@ use App\Http\Controllers\API\ParentController;
 use App\Http\Controllers\API\NoteController;
 use App\Http\Controllers\API\ProfController;
 use App\Http\Controllers\API\FormateurController;
-=======
 use App\Http\Controllers\api\CoursController;
+
 
 
 
@@ -156,6 +157,12 @@ Route::controller(CoursController::class)->group(function () {
 
     Route::post('delete-cours', 'deleteCours');
 
+});
+
+Route::controller(ChatController::class)->group(function () {
+    Route::post('get-chat', 'getChat');
+    Route::post('send-message', 'sendMessage');
+    Route::post('get-all-message', 'getAllMessage');
 });
 
 

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('formation_title');
-            $table->foreign('formation_title')->references('id')->on('formations')->onDelete('cascade');
+            $table->unsignedBigInteger('formation_id');
+            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
             $table->string('cours_title'); 
             $table->string('cours_description'); 
             $table->string('cours_support');
